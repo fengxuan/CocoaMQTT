@@ -272,6 +272,7 @@ extension CocoaMQTTWebSocket: CocoaMQTTWebSocketConnectionDelegate {
         if let del = delegate {
             __delegate_queue {
                 del.socket(self, didReceive: trust, completionHandler: completionHandler)
+                completionHandler(true)
             }
         } else {
             completionHandler(false)
